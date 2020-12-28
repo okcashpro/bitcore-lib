@@ -63,7 +63,7 @@ okcore.deps.bnjs = require('bn.js');
 okcore.deps.bs58 = require('bs58');
 okcore.deps.Buffer = Buffer;
 okcore.deps.elliptic = require('elliptic');
-okcore.deps.scryptsy = require('scryptsy');
+// okcore.deps.scryptsy = require('scryptsy');
 okcore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
