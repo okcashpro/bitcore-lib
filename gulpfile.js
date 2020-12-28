@@ -1,5 +1,5 @@
 
 
-var bitcoreTasks = require('bitcore-build');
+var okcoreTasks = require('okcore-build');
 
-bitcoreTasks('lib');
+okcoreTasks('lib');

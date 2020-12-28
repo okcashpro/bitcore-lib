@@ -1,70 +1,71 @@
 'use strict';
 
-var bitcore = module.exports;
+var okcore = module.exports;
 
 // module information
-bitcore.version = 'v' + require('./package.json').version;
-bitcore.versionGuard = function(version) {
+okcore.version = 'v' + require('./package.json').version;
+okcore.versionGuard = function(version) {
   if (version !== undefined) {
-    var message = 'More than one instance of bitcore-lib found. ' + 
-      'Please make sure to require bitcore-lib and check that submodules do' +
-      ' not also include their own bitcore-lib dependency.';
+    var message = 'More than one instance of okcore-lib found. ' +
+      'Please make sure to require okcore-lib and check that submodules do' +
+      ' not also include their own okcore-lib dependency.';
     throw new Error(message);
   }
 };
-bitcore.versionGuard(global._bitcore);
-global._bitcore = bitcore.version;
+okcore.versionGuard(global._okcore);
+global._okcore = okcore.version;
 
 // crypto
-bitcore.crypto = {};
-bitcore.crypto.BN = require('./lib/crypto/bn');
-bitcore.crypto.ECDSA = require('./lib/crypto/ecdsa');
-bitcore.crypto.Hash = require('./lib/crypto/hash');
-bitcore.crypto.Random = require('./lib/crypto/random');
-bitcore.crypto.Point = require('./lib/crypto/point');
-bitcore.crypto.Signature = require('./lib/crypto/signature');
+okcore.crypto = {};
+okcore.crypto.BN = require('./lib/crypto/bn');
+okcore.crypto.ECDSA = require('./lib/crypto/ecdsa');
+okcore.crypto.Hash = require('./lib/crypto/hash');
+okcore.crypto.Random = require('./lib/crypto/random');
+okcore.crypto.Point = require('./lib/crypto/point');
+okcore.crypto.Signature = require('./lib/crypto/signature');
 
 // encoding
-bitcore.encoding = {};
-bitcore.encoding.Base58 = require('./lib/encoding/base58');
-bitcore.encoding.Base58Check = require('./lib/encoding/base58check');
-bitcore.encoding.BufferReader = require('./lib/encoding/bufferreader');
-bitcore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
-bitcore.encoding.Varint = require('./lib/encoding/varint');
+okcore.encoding = {};
+okcore.encoding.Base58 = require('./lib/encoding/base58');
+okcore.encoding.Base58Check = require('./lib/encoding/base58check');
+okcore.encoding.BufferReader = require('./lib/encoding/bufferreader');
+okcore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
+okcore.encoding.Varint = require('./lib/encoding/varint');
 
 // utilities
-bitcore.util = {};
-bitcore.util.buffer = require('./lib/util/buffer');
-bitcore.util.js = require('./lib/util/js');
-bitcore.util.preconditions = require('./lib/util/preconditions');
+okcore.util = {};
+okcore.util.buffer = require('./lib/util/buffer');
+okcore.util.js = require('./lib/util/js');
+okcore.util.preconditions = require('./lib/util/preconditions');
 
 // errors thrown by the library
-bitcore.errors = require('./lib/errors');
+okcore.errors = require('./lib/errors');
 
 // main bitcoin library
-bitcore.Address = require('./lib/address');
-bitcore.Block = require('./lib/block');
-bitcore.MerkleBlock = require('./lib/block/merkleblock');
-bitcore.BlockHeader = require('./lib/block/blockheader');
-bitcore.HDPrivateKey = require('./lib/hdprivatekey.js');
-bitcore.HDPublicKey = require('./lib/hdpublickey.js');
-bitcore.Networks = require('./lib/networks');
-bitcore.Opcode = require('./lib/opcode');
-bitcore.PrivateKey = require('./lib/privatekey');
-bitcore.PublicKey = require('./lib/publickey');
-bitcore.Script = require('./lib/script');
-bitcore.Transaction = require('./lib/transaction');
-bitcore.URI = require('./lib/uri');
-bitcore.Unit = require('./lib/unit');
+okcore.Address = require('./lib/address');
+okcore.Block = require('./lib/block');
+okcore.MerkleBlock = require('./lib/block/merkleblock');
+okcore.BlockHeader = require('./lib/block/blockheader');
+okcore.HDPrivateKey = require('./lib/hdprivatekey.js');
+okcore.HDPublicKey = require('./lib/hdpublickey.js');
+okcore.Networks = require('./lib/networks');
+okcore.Opcode = require('./lib/opcode');
+okcore.PrivateKey = require('./lib/privatekey');
+okcore.PublicKey = require('./lib/publickey');
+okcore.Script = require('./lib/script');
+okcore.Transaction = require('./lib/transaction');
+okcore.URI = require('./lib/uri');
+okcore.Unit = require('./lib/unit');
 
 // dependencies, subject to change
-bitcore.deps = {};
-bitcore.deps.bnjs = require('bn.js');
-bitcore.deps.bs58 = require('bs58');
-bitcore.deps.Buffer = Buffer;
-bitcore.deps.elliptic = require('elliptic');
-bitcore.deps._ = require('lodash');
+okcore.deps = {};
+okcore.deps.bnjs = require('bn.js');
+okcore.deps.bs58 = require('bs58');
+okcore.deps.Buffer = Buffer;
+okcore.deps.elliptic = require('elliptic');
+okcore.deps.scryptsy = require('scryptsy');
+okcore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
-bitcore._HDKeyCache = require('./lib/hdkeycache');
-bitcore.Transaction.sighash = require('./lib/transaction/sighash');
+okcore._HDKeyCache = require('./lib/hdkeycache');
+okcore.Transaction.sighash = require('./lib/transaction/sighash');

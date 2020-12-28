@@ -1,18 +1,18 @@
 {
-  "name": "bitcore-lib",
-  "main": "./bitcore-lib.min.js",
+  "name": "okcore-lib",
+  "main": "./okcore-lib.min.js",
   "version": "0.13.19",
-  "homepage": "http://bitcore.io",
+  "homepage": "http://okcore.io",
   "authors": [
     "BitPay, Inc."
   ],
-  "description": "A pure, powerful core for your bitcoin project.",
+  "description": "A pure, powerful core for your okcash project.",
   "moduleType": [
     "globals"
   ],
   "keywords": [
-    "bitcoin",
-    "bitcore",
+    "okcash",
+    "okcore",
     "btc",
     "satoshi"
   ],
